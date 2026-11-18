@@ -1,11 +1,22 @@
 import { useParams } from "react-router-dom"
 import './TodoDetailPage.css'
 import type { Todo } from "../App"
+import type { Dispatch, SetStateAction } from "react"
 
-function TodoDetailPage({todos}:{todos:Todo[]}) {
+function TodoDetailPage({todos,setTodos}:{
+  todos:Todo[],
+  setTodos: Dispatch<SetStateAction<Todo[]>>
+}) {
   
   const { itemId } = useParams()
+
+  // 완료토글
   const todo = todos.find((todo) => todo.id === Number(itemId))
+  const toggleTodo = (id: number) => {
+    setTodos((prev)=>
+      prev.map((todo)=> 
+        todo.id === id? {...todo, isCompleted: !todo.isCompleted} : todo))}
+
 
   if (!todo) {
     return <p>할 일을 찾을 수 없어요.</p>
@@ -15,9 +26,13 @@ function TodoDetailPage({todos}:{todos:Todo[]}) {
   <div className="detail-container">
     <div className={todo.isCompleted ? "detail-todo done" : "detail-todo"}>
       {todo.isCompleted ? (
-        <img src="/src/assets/icon/Property 1=Frame 2610233@3x.png" alt="" />
+        <img
+        onClick={()=>{toggleTodo(todo.id)}} 
+        src="/src/assets/icon/Property 1=Frame 2610233@3x.png" alt="" />
       ) : (
-        <img src="/src/assets/icon/Property 1=Default@3x.png" alt="" />
+        <img 
+        onClick={()=>{toggleTodo(todo.id)}}
+        src="/src/assets/icon/Property 1=Default@3x.png" alt="" />
       )}
       <div>{todo.name}</div>
     </div>    
