@@ -1,4 +1,6 @@
 
+import './TodoList.css'
+
 function TodoList({todos}){
 
   const todoItems = todos.filter((todo) => !todo.isCompleted);

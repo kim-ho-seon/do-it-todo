@@ -1,0 +1,53 @@
+.todo-list {
+  display: flex;
+  gap: 24px;
+}
+
+.todo-section,
+.done-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-section h2,
+.done-section h2 {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 16px;
+}
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 9px 12px;
+  border: 2px solid #0f172a;
+  border-radius: 24px;
+  outline: none;
+}
+
+.check-list li img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.check-list li.done {
+  text-decoration: line-through;
+  background-color: #ede9fe;
+}
+
+.empty-state {
+  width: 240px;
+  margin: 0 auto;
+  text-align: center;
+  color: #93a3b8;
+}
+
