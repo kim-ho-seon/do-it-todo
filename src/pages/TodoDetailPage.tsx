@@ -23,7 +23,10 @@ function TodoDetailPage({todos}:{todos:Todo[]}) {
     </div>    
     <div className="detail-content">
       <div className="detail-img">
-        <img src="/src/assets/images/img@3x.png" alt="" />
+        {todo.imageUrl ? (
+          <img className="attached-img" src={todo.imageUrl} alt="첨부 이미지" />
+        ):(
+          <img className="default-img" src="/src/assets/images/img@3x.png" alt="기본 이미지" />)}
         <button type="button" className="img-add-btn" aria-label="이미지 추가"></button>
       </div>
       <div className="detail-memo">
