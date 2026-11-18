@@ -3,10 +3,13 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import TodoListPage from './pages/TodoListPage'
 import TodoDetailPage from './pages/TodoDetailPage';
+import Header from './components/common/Header';
 
 function App() {
 
   return (
+  <>
+  <Header/>
     <div className="main-container">
 
       <Routes>
@@ -15,6 +18,7 @@ function App() {
       </Routes>
 
     </div>
+    </>
   )
 }
 
