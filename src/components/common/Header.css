@@ -12,6 +12,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 /* .header img {
   width: 151px;
