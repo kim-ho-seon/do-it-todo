@@ -1,6 +1,11 @@
+
+import './App.css'
+
 function App() {
+
   return (
-    <div>do it todo</div>
+    <div className="main-container">
+    </div>
   )
 }
 

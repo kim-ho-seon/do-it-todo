@@ -1,0 +1,39 @@
+/*  */
+* {
+  box-sizing: border-box;
+}
+
+ol,ul,li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html,body,#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+button,input,textarea {
+  font: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  appearance: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

@@ -1,0 +1,22 @@
+/* Desktop */
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 40px; */
+  /* background-color: aquamarine; */
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .main-container {
+    padding: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 16px;
+  }
+}
