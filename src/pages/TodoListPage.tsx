@@ -1,14 +1,18 @@
+import type { Dispatch, SetStateAction } from "react"
 import type { Todo } from "../App"
 import TodoForm from "../components/todo/TodoForm"
 import TodoList from "../components/todo/TodoList"
 
-function TodoListPage({todos}:{todos:Todo[]}) {
+function TodoListPage({todos,setTodos}:{
+  todos:Todo[],
+  setTodos: Dispatch<SetStateAction<Todo[]>>
+}) {
 
 
   return (
     <>
     <TodoForm />
-    <TodoList todos={todos}/>
+    <TodoList todos={todos} setTodos={setTodos}/>
     </>
  
   )

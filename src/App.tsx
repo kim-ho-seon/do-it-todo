@@ -16,7 +16,7 @@ export type Todo = {
 }
 
 function App() {
-const [todos, setTodos] = useState([
+const [todos, setTodos] = useState<Todo[]>([
 {
     id: 1,
     name: '청소하기',
@@ -74,7 +74,7 @@ const [todos, setTodos] = useState([
     <div className="main-container">
       
       <Routes>
-            <Route path='/' element={<TodoListPage todos={todos}/>} />
+            <Route path='/' element={<TodoListPage todos={todos} setTodos={setTodos}/>} />
             <Route path='/items/:itemId' element={<TodoDetailPage todos={todos}/>}/>
       </Routes>    
   
