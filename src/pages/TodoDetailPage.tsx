@@ -13,8 +13,12 @@ function TodoDetailPage({todos}:{todos:Todo[]}) {
 
   return (
   <div className="detail-container">
-    <div className="detail-todo"> 
-      <img src="/src/assets/icon/Property 1=Default@3x.png" alt="" /> 
+    <div className={todo.isCompleted ? "detail-todo done" : "detail-todo"}>
+      {todo.isCompleted ? (
+        <img src="/src/assets/icon/Property 1=Frame 2610233@3x.png" alt="" />
+      ) : (
+        <img src="/src/assets/icon/Property 1=Default@3x.png" alt="" />
+      )}
       <div>{todo.name}</div>
     </div>    
     <div className="detail-content">
