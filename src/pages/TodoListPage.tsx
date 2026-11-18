@@ -1,8 +1,11 @@
+import TodoForm from "../components/todo/TodoForm"
+
 function TodoListPage() {
 
 
   return (
     <>
+    <TodoForm />
     </>
 
   )
