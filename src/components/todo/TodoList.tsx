@@ -1,7 +1,10 @@
 
+import { useNavigate } from 'react-router-dom';
 import './TodoList.css'
 
 function TodoList({todos}){
+
+  const navigate = useNavigate()
 
   const todoItems = todos.filter((todo) => !todo.isCompleted);
   const doneItems = todos.filter((todo) => todo.isCompleted);
@@ -20,6 +23,7 @@ function TodoList({todos}){
             <li 
               key={todo.id} 
               className="todo-item"
+              onClick={()=>navigate(`/items/${todo.id}`)}
             > <img src="src\assets\icon\Property 1=Default@3x.png" alt="" />{todo.name}
             </li>
           ))}
