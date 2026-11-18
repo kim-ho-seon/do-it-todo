@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 
-function TodoDetailPage() {
+function TodoDetailPage({todos}) {
 
   const { itemId } = useParams()
 

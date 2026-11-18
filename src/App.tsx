@@ -23,8 +23,8 @@ const [todos, setTodos] = useState([
     <div className="main-container">
       
       <Routes>
-            <Route path='/' element={<TodoListPage />} />
-            <Route path='/items/:itemId' element={<TodoDetailPage />}/>
+            <Route path='/' element={<TodoListPage todos={todos}/>} />
+            <Route path='/items/:itemId' element={<TodoDetailPage todos={todos}/>}/>
       </Routes>    
   
     </div>
