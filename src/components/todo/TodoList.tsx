@@ -48,8 +48,9 @@ function TodoList({todos}:{todos:Todo[]}){
           {/* 완료한 할 일 */}
           {doneItems.map((todo) => (
             <li key={todo.id} 
-            className="todo-item done">
-              <img src="src\assets\icon\Property 1=Frame 2610233@3x.png" alt="" />{todo.name}</li>
+            className="todo-item done"
+            onClick={()=>navigate(`/items/${todo.id}`)}
+            > <img src="src\assets\icon\Property 1=Frame 2610233@3x.png" alt="" />{todo.name}</li>
           ))}
         </ul>
         ):(
