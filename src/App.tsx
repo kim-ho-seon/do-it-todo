@@ -6,6 +6,12 @@ import TodoDetailPage from './pages/TodoDetailPage';
 import Header from './components/common/Header';
 import { useState } from 'react';
 
+export type Todo = {
+  id: number
+  name: string
+  isCompleted: boolean
+}
+
 function App() {
 const [todos, setTodos] = useState([
   { id: 1, name: '청소하기', isCompleted: false },

@@ -1,10 +1,15 @@
 import { useParams } from "react-router-dom"
 import './TodoDetailPage.css'
+import type { Todo } from "../App"
 
-function TodoDetailPage({todos}) {
+function TodoDetailPage({todos}:{todos:Todo[]}) {
   
   const { itemId } = useParams()
   const todo = todos.find((todo) => todo.id === Number(itemId))
+
+  if (!todo) {
+    return <p>할 일을 찾을 수 없어요.</p>
+  }
 
   return (
   <div className="detail-container">

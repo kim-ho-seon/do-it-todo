@@ -1,8 +1,9 @@
 
 import { useNavigate } from 'react-router-dom';
 import './TodoList.css'
+import type { Todo } from '../../App';
 
-function TodoList({todos}){
+function TodoList({todos}:{todos:Todo[]}){
 
   const navigate = useNavigate()
 
@@ -46,7 +47,9 @@ function TodoList({todos}){
         <ul className="check-list">
           {/* 완료한 할 일 */}
           {doneItems.map((todo) => (
-            <li key={todo.id} className="todo-item done"><img src="src\assets\icon\Property 1=Frame 2610233@3x.png" alt="" />{todo.name}</li>
+            <li key={todo.id} 
+            className="todo-item done">
+              <img src="src\assets\icon\Property 1=Frame 2610233@3x.png" alt="" />{todo.name}</li>
           ))}
         </ul>
         ):(
