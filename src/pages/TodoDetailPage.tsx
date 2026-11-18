@@ -30,7 +30,14 @@ function TodoDetailPage({todos}:{todos:Todo[]}) {
         <button type="button" className="img-add-btn" aria-label="이미지 추가"></button>
       </div>
       <div className="detail-memo">
-        <img className="memo-img" src="/src/assets/images/memo@3x.png" alt="" />
+        <div className="memo-box">
+          <h3 className="memo-title">Memo</h3>
+          <textarea
+                className="memo-textarea"
+                defaultValue={todo.memo}
+                placeholder="메모를 입력하세요"
+              />
+        </div>
         <div className="memo-btns">
           <button className="edit-btn"><img src="/src/assets/icon/check.png" alt="" />수정완료</button>
           <button className="delete-btn"><img src="/src/assets/icon/X.png" alt="" />삭제하기</button>
