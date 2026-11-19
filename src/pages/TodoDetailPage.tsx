@@ -2,6 +2,11 @@ import { useNavigate, useParams } from "react-router-dom"
 import './TodoDetailPage.css'
 import type { Todo } from "../App"
 import { useRef, useState, type ChangeEvent, type Dispatch, type SetStateAction } from "react"
+import defaultImg from "../assets/images/img.png"
+import checkIcon from "../assets/icon/check.png"
+import xIcon from "../assets/icon/X.png"
+import checkOnIcon from "../assets/icon/checkCircle.png"
+import checkOffIcon from "../assets/icon/checkEmpty.png"
 
 function TodoDetailPage({todos,setTodos}:{
   todos:Todo[],
@@ -78,11 +83,11 @@ function TodoDetailPage({todos,setTodos}:{
       {todo.isCompleted ? (
         <img
         onClick={()=>{toggleTodo(todo.id)}} 
-        src="/src/assets/icon/checkCircle.png" alt="" />
+        src={checkOnIcon} alt="" />
       ) : (
         <img 
         onClick={()=>{toggleTodo(todo.id)}}
-        src="/src/assets/icon/checkEmpty.png" alt="" />
+        src={checkOffIcon} alt="" />
       )}
       <input
         className="detail-name-input"
@@ -97,7 +102,7 @@ function TodoDetailPage({todos,setTodos}:{
         {imageUrl ? (
           <img className="attached-img" src={imageUrl} alt="첨부 이미지" />
         ):(
-          <img className="default-img" src="/src/assets/images/img.png" alt="기본 이미지" />)}
+          <img className="default-img" src={defaultImg} alt="기본 이미지" />)}
         <button className={imageUrl? "img-add-btn is-edit":"img-add-btn" }
           onClick={()=>fileInputRef.current?.click()}
           type="button" 
@@ -124,11 +129,11 @@ function TodoDetailPage({todos,setTodos}:{
           <button 
             className={todo.isCompleted ?"is-done edit-btn":"edit-btn"}
             onClick={handleSave}
-          ><img src="/src/assets/icon/check.png" alt="" />수정완료</button>
+          ><img src={checkIcon} alt="" />수정완료</button>
           <button 
             className="delete-btn"
             onClick={handleDelete}
-          ><img src="/src/assets/icon/X.png" alt="" />삭제하기</button>
+          ><img src={xIcon} alt="" />삭제하기</button>
         </div>
       </div>
     </div>     

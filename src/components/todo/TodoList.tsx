@@ -3,6 +3,10 @@ import { useNavigate, } from 'react-router-dom';
 import './TodoList.css'
 import type { Todo } from '../../App';
 import type { Dispatch, SetStateAction } from 'react';
+import todoTitleImg from '../../assets/images/todo.png';
+import doneTitleImg from '../../assets/images/done.png';
+import checkOffIcon from '../../assets/icon/checkEmpty.png';
+import checkOnIcon from '../../assets/icon/checkCircle.png';
 
 function TodoList({todos,setTodos}:{
   todos:Todo[],
@@ -22,7 +26,7 @@ function TodoList({todos,setTodos}:{
     <div className="todo-list">
       <div className="todo-section">
         <h2>
-          <img src="src\assets\images\todo.png" alt="TO DO" />     
+          <img src={todoTitleImg} alt="TO DO" />     
         </h2>
 
         {todoItems.length > 0 ? (
@@ -35,7 +39,7 @@ function TodoList({todos,setTodos}:{
               onClick={()=>navigate(`/items/${todo.id}`)}
             > <img 
               onClick={(e)=>{e.stopPropagation();toggleTodo(todo.id)}}
-              src="src\assets\icon\checkEmpty.png" alt="" />{todo.name}
+              src={checkOffIcon} alt="" />{todo.name}
             </li>
           ))}
         </ul> 
@@ -51,7 +55,7 @@ function TodoList({todos,setTodos}:{
 
       <div className="done-section">
         <h2>
-          <img src="src\assets\images\done.png" alt="DONE" />
+          <img src={doneTitleImg} alt="DONE" />
         </h2>
         {doneItems.length > 0 ? (
         <ul className="check-list">
@@ -62,7 +66,7 @@ function TodoList({todos,setTodos}:{
             onClick={()=>navigate(`/items/${todo.id}`)}
             > <img
               onClick={(e)=>{e.stopPropagation();toggleTodo(todo.id)}} 
-              src="src\assets\icon\checkCircle.png" alt="" />{todo.name}</li>
+              src={checkOnIcon} alt="" />{todo.name}</li>
           ))}
         </ul>
         ):(
