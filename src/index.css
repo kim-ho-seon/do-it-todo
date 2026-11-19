@@ -19,6 +19,11 @@
 
   --white: #FFFFFF;
 
+  --font-bold-20: 700 20px/1.5 'NanumSquare', sans-serif;
+  --font-bold-18: 700 18px/1.5 'NanumSquare', sans-serif;
+  --font-bold-16: 700 16px/1.5 'NanumSquare', sans-serif;
+  --font-regular-16: 400 16px/1.5 'NanumSquare', sans-serif;
+  --font-extrabold-16: 800 16px/1.5 'NanumSquare', sans-serif;
 }
 
 * {

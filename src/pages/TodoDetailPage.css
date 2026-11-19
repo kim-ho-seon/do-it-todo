@@ -29,7 +29,7 @@
 .detail-name-input {
   border: none;
   outline: none;
-  font: inherit;
+  font: var(--font-bold-20); 
   color: inherit;
   background-color: rgba(15, 23, 42, 0.06);
   text-align: center;
@@ -135,6 +135,7 @@
   margin: 0 0 16px;
   text-align: center;
   color: var(--amber-800);
+  font: var(--font-extrabold-16); 
 }
 
 .memo-textarea{
@@ -163,6 +164,11 @@
 .memo-btns img{
   width: 16px;
   height: 16px;
+}
+
+.edit-btn,
+.delete-btn {
+  font: var(--font-bold-16);
 }
 
 .edit-btn{
