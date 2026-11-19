@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import './TodoDetailPage.css'
 import type { Todo } from "../App"
-import type { Dispatch, SetStateAction } from "react"
+import { useState, type Dispatch, type SetStateAction } from "react"
 
 function TodoDetailPage({todos,setTodos}:{
   todos:Todo[],
@@ -9,6 +9,7 @@ function TodoDetailPage({todos,setTodos}:{
 }) {
   
   const { itemId } = useParams()
+  const navigate = useNavigate()
 
   // 완료토글
   const todo = todos.find((todo) => todo.id === Number(itemId))
@@ -17,6 +18,18 @@ function TodoDetailPage({todos,setTodos}:{
       prev.map((todo)=> 
         todo.id === id? {...todo, isCompleted: !todo.isCompleted} : todo))}
 
+
+  // 메모수정 
+  const [memo, setMemo] = useState(todo?.memo ?? '')
+
+  const handleSaveMemo =()=>{
+    setTodos((prev)=>
+      prev.map((item)=>
+        item.id === Number(itemId) ? { ...item, memo } : item
+      )
+    );
+    navigate('/')
+  }
 
   if (!todo) {
     return <p>할 일을 찾을 수 없어요.</p>
@@ -49,12 +62,16 @@ function TodoDetailPage({todos,setTodos}:{
           <h3 className="memo-title">Memo</h3>
           <textarea
                 className="memo-textarea"
-                defaultValue={todo.memo}
+                value={memo}
+                onChange={(e) => setMemo(e.target.value)}
                 placeholder="메모를 입력하세요"
               />
         </div>
         <div className="memo-btns">
-          <button className="edit-btn"><img src="/src/assets/icon/check.png" alt="" />수정완료</button>
+          <button 
+            className="edit-btn"
+            onClick={handleSaveMemo}
+          ><img src="/src/assets/icon/check.png" alt="" />수정완료</button>
           <button className="delete-btn"><img src="/src/assets/icon/X.png" alt="" />삭제하기</button>
         </div>
       </div>
