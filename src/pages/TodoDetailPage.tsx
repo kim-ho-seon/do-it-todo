@@ -86,7 +86,6 @@ function TodoDetailPage({todos,setTodos}:{
         </div>
       </div>
     </div>     
-   <p>선택한 ID: {itemId}</p>
  </div>
   )
 }
