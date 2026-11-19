@@ -8,23 +8,23 @@
 .todo-form input {
   flex:1;
   padding: 0 16px;
-  background-color: #f1f5f9;
-  border: 2px solid #0f172a;
+  background-color: var(--slate-100);
+  border: 2px solid var(--slate-900);
   border-radius: 24px;
   outline: none;
-  box-shadow: 4px 4px 0 #0f172a;
+  box-shadow: 4px 4px 0 var(--slate-900);
 }
 
 .todo-form button {
   width: 160px;
   height: 56px;
-  border: 2px solid #0f172a;
+  border: 2px solid var(--slate-900);
   border-radius: 16px;
-  background-color: #e2e8f0;
-  color: #0f172a;
+  background-color: var(--slate-200);
+  color: var(--slate-900);
   border-radius: 24px;
   outline: none;
-  box-shadow: 4px 4px 0 #0f172a;
+  box-shadow: 4px 4px 0 var(--slate-900);
   padding: 17px 0 ;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #0f172a;
+  background-color: var(--slate-900);
 }
 
 .plus-icon::before {

@@ -11,12 +11,12 @@
   gap: 16px;
   justify-content: center;
   padding: 16px 0;
-  border: 2px solid #0f172a;
+  border: 2px solid var(--slate-900);
   border-radius: 24px;
 }
 
 .detail-todo.done{
-  background-color: #ede9fe;
+  background-color: var(--violet-100);
   text-decoration: underline ;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .detail-name-input:focus {
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .detail-content{
@@ -57,7 +57,7 @@
   align-items: center;
   justify-content: center;
   height: 310px;
-  border: 2px dashed #CBD5E1;
+  border: 2px dashed var(--slate-300);
   border-radius: 24px;
 }
 
@@ -81,7 +81,7 @@
   height: 64px;
   border: none;
   border-radius: 50%;
-  background-color: #E2E8F0;
+  background-color: var(--slate-200);
 }
 
 .img-add-btn::before,
@@ -92,7 +92,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 2px;
-  background-color: #64748B;
+  background-color: var(--slate-500);
 }
 
 .img-add-btn::before{
@@ -134,7 +134,7 @@
 .memo-title{
   margin: 0 0 16px;
   text-align: center;
-  color: #92400E;
+  color: var(--amber-800);
 }
 
 .memo-textarea{
@@ -170,14 +170,14 @@
   align-items: center;
   gap: 4px;
   border-radius: 24px;
-  background-color: #E2E8F0;
+  background-color: var(--slate-200);
   padding: 16px 42px;  
-  border: 2px solid #0f172a;
-  box-shadow: 4px 4px 0 #0f172a;
+  border: 2px solid var(--slate-900);
+  box-shadow: 4px 4px 0 var(--slate-900);
 }
 
 .is-done.edit-btn{
-  background-color: #BEF264;
+  background-color: var(--lime-300);
 }
 
 .delete-btn{
@@ -185,11 +185,11 @@
   align-items: center;
   gap: 4px;
   border-radius: 24px;
-  background-color: #F43F5E;
+  background-color: var(--rose-500);
   padding: 16px 42px;
-  border: 2px solid #0f172a;
-  box-shadow: 4px 4px 0 #0f172a;
-  color: #fff;
+  border: 2px solid var(--slate-900);
+  box-shadow: 4px 4px 0 var(--slate-900);
+  color: var(--white);
 }
 
 /* Tablet */
