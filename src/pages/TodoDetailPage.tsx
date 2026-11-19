@@ -31,6 +31,13 @@ function TodoDetailPage({todos,setTodos}:{
     navigate('/')
   }
 
+  // 삭제
+  const handleDelete=()=>{
+    if (!window.confirm('정말 삭제할까요?')) return;
+    setTodos((prev)=>prev.filter((item)=>item.id !== Number(itemId)))
+    navigate('/');
+  }
+
   if (!todo) {
     return <p>할 일을 찾을 수 없어요.</p>
   }
@@ -72,7 +79,10 @@ function TodoDetailPage({todos,setTodos}:{
             className="edit-btn"
             onClick={handleSaveMemo}
           ><img src="/src/assets/icon/check.png" alt="" />수정완료</button>
-          <button className="delete-btn"><img src="/src/assets/icon/X.png" alt="" />삭제하기</button>
+          <button 
+            className="delete-btn"
+            onClick={handleDelete}
+          ><img src="/src/assets/icon/X.png" alt="" />삭제하기</button>
         </div>
       </div>
     </div>     
