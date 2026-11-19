@@ -23,7 +23,10 @@ function TodoForm({setTodos}:{setTodos:Dispatch<SetStateAction<Todo[]>>}) {
         value={inputValue}
         onChange={(e)=> setInputValue(e.target.value)}
       />
-      <button type="submit"><span className="plus-icon" aria-hidden="true"></span>추가하기</button>
+      <button type="submit" aria-label="추가하기">
+        <span className="plus-icon" aria-hidden="true"></span>
+        <span className="btn-text">추가하기</span>
+      </button>
     </form>
     
   );
