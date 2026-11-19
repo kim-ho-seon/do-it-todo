@@ -18,6 +18,7 @@ function TodoDetailPage({todos,setTodos}:{
       prev.map((todo)=> 
         todo.id === id? {...todo, isCompleted: !todo.isCompleted} : todo))}
 
+  const [name, setName] = useState(todo?.name ?? '')
   const [memo, setMemo] = useState(todo?.memo ?? '')
   const [imageUrl, setImageUrl] = useState(todo?.imageUrl ?? '')
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -46,9 +47,15 @@ function TodoDetailPage({todos,setTodos}:{
 
     // 수정 및 저장
   const handleSave =()=>{
+    const trimmedName = name.trim()
+    if (!trimmedName) {
+      alert('할 일 이름을 입력해주세요.')
+      return
+    }
+
     setTodos((prev)=>
       prev.map((item)=>
-        item.id === Number(itemId) ? { ...item, memo, imageUrl } : item
+        item.id === Number(itemId) ? { ...item, memo, imageUrl, name } : item
       )
     );
     navigate('/')
@@ -77,7 +84,13 @@ function TodoDetailPage({todos,setTodos}:{
         onClick={()=>{toggleTodo(todo.id)}}
         src="/src/assets/icon/Property 1=Default@3x.png" alt="" />
       )}
-      <div>{todo.name}</div>
+      <input
+        className="detail-name-input"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="할 일 이름"
+        aria-label="할 일 이름"
+      />
     </div>    
     <div className="detail-content">
       <div className="detail-img">

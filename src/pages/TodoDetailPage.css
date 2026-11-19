@@ -17,13 +17,32 @@
 
 .detail-todo.done{
   background-color: #ede9fe;
-  text-decoration: line-through;
+  text-decoration: underline ;
 }
 
 .detail-todo img{
   display: block;
   width: 24px;
   height: 24px;
+}
+
+.detail-name-input {
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background-color: rgba(15, 23, 42, 0.06);
+  text-align: center;
+  cursor: text;
+  border-radius: 8px;
+}
+
+.detail-name-input:hover {
+  background-color: rgba(15, 23, 42, 0.06);
+}
+
+.detail-name-input:focus {
+  background-color: #fff;
 }
 
 .detail-content{
