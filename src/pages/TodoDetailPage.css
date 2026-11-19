@@ -161,6 +161,9 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
+  .detail-container{
+    padding: 16px 0;
+  }
   .detail-content{
     flex-direction: column;
   }
