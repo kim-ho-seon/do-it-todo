@@ -42,7 +42,7 @@ html,body,#root {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'NanumSquare', sans-serif;
 }
 
 button,input,textarea {
