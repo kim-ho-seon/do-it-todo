@@ -22,7 +22,7 @@ function TodoList({todos,setTodos}:{
     <div className="todo-list">
       <div className="todo-section">
         <h2>
-          <img src="src\assets\images\todo@3x.png" alt="TO DO" />     
+          <img src="src\assets\images\todo.png" alt="TO DO" />     
         </h2>
 
         {todoItems.length > 0 ? (
@@ -35,7 +35,7 @@ function TodoList({todos,setTodos}:{
               onClick={()=>navigate(`/items/${todo.id}`)}
             > <img 
               onClick={(e)=>{e.stopPropagation();toggleTodo(todo.id)}}
-              src="src\assets\icon\Property 1=Default@3x.png" alt="" />{todo.name}
+              src="src\assets\icon\checkEmpty.png" alt="" />{todo.name}
             </li>
           ))}
         </ul> 
@@ -51,7 +51,7 @@ function TodoList({todos,setTodos}:{
 
       <div className="done-section">
         <h2>
-          <img src="src\assets\images\done@3x.png" alt="DONE" />
+          <img src="src\assets\images\done.png" alt="DONE" />
         </h2>
         {doneItems.length > 0 ? (
         <ul className="check-list">
@@ -62,7 +62,7 @@ function TodoList({todos,setTodos}:{
             onClick={()=>navigate(`/items/${todo.id}`)}
             > <img
               onClick={(e)=>{e.stopPropagation();toggleTodo(todo.id)}} 
-              src="src\assets\icon\Property 1=Frame 2610233@3x.png" alt="" />{todo.name}</li>
+              src="src\assets\icon\checkCircle.png" alt="" />{todo.name}</li>
           ))}
         </ul>
         ):(

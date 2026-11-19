@@ -78,11 +78,11 @@ function TodoDetailPage({todos,setTodos}:{
       {todo.isCompleted ? (
         <img
         onClick={()=>{toggleTodo(todo.id)}} 
-        src="/src/assets/icon/Property 1=Frame 2610233@3x.png" alt="" />
+        src="/src/assets/icon/checkCircle.png" alt="" />
       ) : (
         <img 
         onClick={()=>{toggleTodo(todo.id)}}
-        src="/src/assets/icon/Property 1=Default@3x.png" alt="" />
+        src="/src/assets/icon/checkEmpty.png" alt="" />
       )}
       <input
         className="detail-name-input"
@@ -97,7 +97,7 @@ function TodoDetailPage({todos,setTodos}:{
         {imageUrl ? (
           <img className="attached-img" src={imageUrl} alt="첨부 이미지" />
         ):(
-          <img className="default-img" src="/src/assets/images/img@3x.png" alt="기본 이미지" />)}
+          <img className="default-img" src="/src/assets/images/img.png" alt="기본 이미지" />)}
         <button className={imageUrl? "img-add-btn is-edit":"img-add-btn" }
           onClick={()=>fileInputRef.current?.click()}
           type="button" 

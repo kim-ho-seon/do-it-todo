@@ -128,7 +128,7 @@
   padding: 24px;
   box-sizing: border-box;
   border-radius: 24px;
-  background: url('../assets/images/memo@3x.png') center / cover no-repeat;
+  background: url('../assets/images/memo.png') center / cover no-repeat;
 }
 
 .memo-title{

@@ -66,13 +66,13 @@
 .empty-img-todo {
   width: 240px;
   height: 240px;
-  background-image: url('../../assets/images/Type=Todo, Size=Large@3x.png');
+  background-image: url('../../assets/images/todoLarge.png');
 }
 
 .empty-img-done {
   width: 240px;
   height: 240px;
-  background-image: url('../../assets/images/Type=Done, Size=Large@3x.png');
+  background-image: url('../../assets/images/doneLarge.png');
 }
 
 
@@ -94,12 +94,12 @@
   .empty-img-todo {
     width: 120px;
     height: 120px;
-    background-image: url('../../assets/images/Type=todo, Size=Small@3x.png');
+    background-image: url('../../assets/images/todoSmall.png');
   }
 
   .empty-img-done {
     width: 120px;
     height: 120px;
-    background-image: url('../../assets/images/Type=Done, Size=Small@3x.png');
+    background-image: url('../../assets/images/doneSmall.png');
   }
 }

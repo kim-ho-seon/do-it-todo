@@ -8,7 +8,7 @@
   display: block;  
   width: 151px;
   height: 40px;
-  background-image: url('../../assets/images/Size=Large@3x.png');
+  background-image: url('../../assets/images/logoLarge.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,6 +27,6 @@
 @media (max-width: 768px) {
   .logo {
     width: 71px; 
-    background-image: url('../../assets/images/Size=Small@3x.png');
+    background-image: url('../../assets/images/logoSmall.png');
   }
 }
