@@ -1,6 +1,7 @@
 .todo-list {
   display: flex;
   gap: 24px;
+  padding-top: 16px;
 }
 
 .todo-section,
@@ -55,3 +56,50 @@
   color: #93a3b8;
 }
 
+.empty-img {
+  margin: 0 auto 16px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.empty-img-todo {
+  width: 240px;
+  height: 240px;
+  background-image: url('../../assets/images/Type=Todo, Size=Large@3x.png');
+}
+
+.empty-img-done {
+  width: 240px;
+  height: 240px;
+  background-image: url('../../assets/images/Type=Done, Size=Large@3x.png');
+}
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .todo-list {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .todo-list {
+    gap: 30px;
+  }
+
+  .empty-img-todo {
+    width: 120px;
+    height: 120px;
+    background-image: url('../../assets/images/Type=todo, Size=Small@3x.png');
+  }
+
+  .empty-img-done {
+    width: 120px;
+    height: 120px;
+    background-image: url('../../assets/images/Type=Done, Size=Small@3x.png');
+  }
+}

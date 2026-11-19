@@ -41,7 +41,7 @@ function TodoList({todos,setTodos}:{
         </ul> 
         ):(
          <div className="empty-state">
-          <img src="src\assets\images\Type=Todo, Size=Large@3x.png" alt="할 일이 없어요. 해야 할 일을 추가해주세요!" />
+          <div className="empty-img empty-img-todo" aria-hidden="true"></div>          
           <p>할 일이 없어요.</p>
           <p>TODO를 새롭게 추가해주세요!</p>
          </div>
@@ -67,11 +67,11 @@ function TodoList({todos,setTodos}:{
         </ul>
         ):(
          <div className="empty-state">
-          <img src="src\assets\images\Type=Done, Size=Large@3x.png" alt="아직 다 한 일이 없어요. 해야 할 일을 체크해 보세요!" />
+          <div className="empty-img empty-img-done" aria-hidden="true"></div>
           <p>아직 다 한 일이 없어요. </p>
           <p>해야 할 일을 체크해 보세요!</p>
          </div>
-         )}
+         )} 
       </div>
     </div>
   );
