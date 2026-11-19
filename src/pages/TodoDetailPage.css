@@ -176,6 +176,10 @@
   box-shadow: 4px 4px 0 #0f172a;
 }
 
+.is-done.edit-btn{
+  background-color: #BEF264;
+}
+
 .delete-btn{
   display: flex;
   align-items: center;

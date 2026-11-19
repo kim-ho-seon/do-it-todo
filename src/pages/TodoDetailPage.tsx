@@ -122,7 +122,7 @@ function TodoDetailPage({todos,setTodos}:{
         </div>
         <div className="memo-btns">
           <button 
-            className="edit-btn"
+            className={todo.isCompleted ?"is-done edit-btn":"edit-btn"}
             onClick={handleSave}
           ><img src="/src/assets/icon/check.png" alt="" />수정완료</button>
           <button 
