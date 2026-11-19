@@ -105,6 +105,15 @@
   height: 24px;
 }
 
+.img-add-btn.is-edit{
+  background: rgba(15, 23, 42, 0.5) url('../assets/icon/edit.png') center / 30px no-repeat;
+}
+
+.img-add-btn.is-edit::before,
+.img-add-btn.is-edit::after {
+  display: none;
+}
+
 .detail-memo{
   flex:3;
   display: flex;
@@ -155,6 +164,7 @@
   width: 16px;
   height: 16px;
 }
+
 .edit-btn{
   display: flex;
   align-items: center;

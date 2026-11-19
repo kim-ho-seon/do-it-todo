@@ -98,10 +98,10 @@ function TodoDetailPage({todos,setTodos}:{
           <img className="attached-img" src={imageUrl} alt="첨부 이미지" />
         ):(
           <img className="default-img" src="/src/assets/images/img@3x.png" alt="기본 이미지" />)}
-        <button className="img-add-btn" 
+        <button className={imageUrl? "img-add-btn is-edit":"img-add-btn" }
           onClick={()=>fileInputRef.current?.click()}
           type="button" 
-          aria-label="이미지 추가"> 
+          aria-label={imageUrl?"이미지 변경":"이미지 추가"}> 
         </button>
         <input type="file"
           accept="image/*"
