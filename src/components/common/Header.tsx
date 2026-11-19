@@ -1,13 +1,13 @@
-import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
-  const navigate = useNavigate();
 
   return (
     <header className="header">
       <div className="header-inner">
-        <h1 className="logo" aria-label="do it Logo" onClick={() => navigate('/')} />
+        <h1>
+          <a href="/" className="logo" aria-label="do it 홈으로 이동" />
+        </h1>      
       </div>
     </header>
   );

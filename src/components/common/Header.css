@@ -5,14 +5,17 @@
 }
 
 .logo {
+  display: block;  
   width: 151px;
   height: 40px;
-  margin: 0;
   background-image: url('../../assets/images/Size=Large@3x.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer;
+}
+
+.header h1 {
+  margin: 0;
 }
 
 .header-inner {
