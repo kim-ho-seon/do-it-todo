@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import './TodoDetailPage.css'
 import type { Todo } from "../App"
-import { useState, type Dispatch, type SetStateAction } from "react"
+import { useRef, useState, type ChangeEvent, type Dispatch, type SetStateAction } from "react"
 
 function TodoDetailPage({todos,setTodos}:{
   todos:Todo[],
@@ -18,14 +18,31 @@ function TodoDetailPage({todos,setTodos}:{
       prev.map((todo)=> 
         todo.id === id? {...todo, isCompleted: !todo.isCompleted} : todo))}
 
-
-  // 메모수정 
   const [memo, setMemo] = useState(todo?.memo ?? '')
+  const [imageUrl, setImageUrl] = useState(todo?.imageUrl ?? '')
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const handleSaveMemo =()=>{
+  // 이미지파일 선택
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>)=>{
+    const file = e.target.files?.[0]
+    e.target.value = ''
+    if(!file) return
+    if(!file.type.startsWith('image/')){
+      alert('이미지 파일만 첨부할 수 있어요.');
+      return
+    }
+    if(file.size > 5*1024*1024){
+      alert('5MB 이하 이미지만 첨부할 수 있어요.')
+      return
+    }
+    setImageUrl(URL.createObjectURL(file))
+  }
+
+    // 수정 및 저장
+  const handleSave =()=>{
     setTodos((prev)=>
       prev.map((item)=>
-        item.id === Number(itemId) ? { ...item, memo } : item
+        item.id === Number(itemId) ? { ...item, memo, imageUrl } : item
       )
     );
     navigate('/')
@@ -58,11 +75,21 @@ function TodoDetailPage({todos,setTodos}:{
     </div>    
     <div className="detail-content">
       <div className="detail-img">
-        {todo.imageUrl ? (
-          <img className="attached-img" src={todo.imageUrl} alt="첨부 이미지" />
+        {imageUrl ? (
+          <img className="attached-img" src={imageUrl} alt="첨부 이미지" />
         ):(
           <img className="default-img" src="/src/assets/images/img@3x.png" alt="기본 이미지" />)}
-        <button type="button" className="img-add-btn" aria-label="이미지 추가"></button>
+        <button className="img-add-btn" 
+          onClick={()=>fileInputRef.current?.click()}
+          type="button" 
+          aria-label="이미지 추가"> 
+        </button>
+        <input type="file"
+          accept="image/*"
+          ref={fileInputRef}
+          onChange={handleImageChange}
+          hidden
+        />
       </div>
       <div className="detail-memo">
         <div className="memo-box">
@@ -77,7 +104,7 @@ function TodoDetailPage({todos,setTodos}:{
         <div className="memo-btns">
           <button 
             className="edit-btn"
-            onClick={handleSaveMemo}
+            onClick={handleSave}
           ><img src="/src/assets/icon/check.png" alt="" />수정완료</button>
           <button 
             className="delete-btn"
