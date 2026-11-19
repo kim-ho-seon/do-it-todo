@@ -31,6 +31,12 @@ function TodoDetailPage({todos,setTodos}:{
       alert('이미지 파일만 첨부할 수 있어요.');
       return
     }
+    const baseName = file.name.replace(/\.[^.]+$/, '')
+    if (!/^[a-zA-Z]+$/.test(baseName)) {
+      alert('파일 이름은 영어로만 되어 있어야 해요.')
+      return
+    }
+    
     if(file.size > 5*1024*1024){
       alert('5MB 이하 이미지만 첨부할 수 있어요.')
       return
