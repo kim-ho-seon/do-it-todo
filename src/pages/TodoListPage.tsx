@@ -11,7 +11,7 @@ function TodoListPage({todos,setTodos}:{
 
   return (
     <>
-    <TodoForm />
+    <TodoForm setTodos={setTodos} />
     <TodoList todos={todos} setTodos={setTodos}/>
     </>
  
