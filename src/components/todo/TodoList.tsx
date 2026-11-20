@@ -3,10 +3,9 @@ import { useNavigate, } from 'react-router-dom';
 import './TodoList.css'
 import type { Todo } from '../../App';
 import type { Dispatch, SetStateAction } from 'react';
+import TodoListItem from './TodoListItem';
 import todoTitleImg from '../../assets/images/todo.png';
 import doneTitleImg from '../../assets/images/done.png';
-import checkOffIcon from '../../assets/icon/checkEmpty.png';
-import checkOnIcon from '../../assets/icon/checkCircle.png';
 
 function TodoList({todos,setTodos}:{
   todos:Todo[],
@@ -33,14 +32,12 @@ function TodoList({todos,setTodos}:{
         <ul className="check-list">
           {/* 해야 할 일 */}
           {todoItems.map((todo) => (
-            <li 
-              key={todo.id} 
-              className="todo-item"
-              onClick={()=>navigate(`/items/${todo.id}`)}
-            > <img 
-              onClick={(e)=>{e.stopPropagation();toggleTodo(todo.id)}}
-              src={checkOffIcon} alt="" />{todo.name}
-            </li>
+            <TodoListItem
+            key={todo.id}
+            todo={todo}
+            onToggle={toggleTodo}
+            onClick={(id) => navigate(`/items/${id}`)}
+            />
           ))}
         </ul> 
         ):(
@@ -61,12 +58,12 @@ function TodoList({todos,setTodos}:{
         <ul className="check-list">
           {/* 완료한 할 일 */}
           {doneItems.map((todo) => (
-            <li key={todo.id} 
-            className="todo-item done"
-            onClick={()=>navigate(`/items/${todo.id}`)}
-            > <img
-              onClick={(e)=>{e.stopPropagation();toggleTodo(todo.id)}} 
-              src={checkOnIcon} alt="" />{todo.name}</li>
+            <TodoListItem
+              key={todo.id}
+              todo={todo}
+              onToggle={toggleTodo}
+              onClick={(id) => navigate(`/items/${id}`)}
+            />
           ))}
         </ul>
         ):(
