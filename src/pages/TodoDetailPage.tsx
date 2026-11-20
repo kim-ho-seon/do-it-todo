@@ -2,11 +2,10 @@ import { useNavigate, useParams } from "react-router-dom"
 import './TodoDetailPage.css'
 import type { Todo } from "../App"
 import { useRef, useState, type ChangeEvent, type Dispatch, type SetStateAction } from "react"
+import TodoDetailItem from "../components/todo/TodoDetailItem"
 import defaultImg from "../assets/images/img.png"
 import checkIcon from "../assets/icon/check.png"
 import xIcon from "../assets/icon/X.png"
-import checkOnIcon from "../assets/icon/checkCircle.png"
-import checkOffIcon from "../assets/icon/checkEmpty.png"
 
 function TodoDetailPage({todos,setTodos}:{
   todos:Todo[],
@@ -79,24 +78,12 @@ function TodoDetailPage({todos,setTodos}:{
 
   return (
   <div className="detail-container">
-    <div className={todo.isCompleted ? "detail-todo done" : "detail-todo"}>
-      {todo.isCompleted ? (
-        <img
-        onClick={()=>{toggleTodo(todo.id)}} 
-        src={checkOnIcon} alt="" />
-      ) : (
-        <img 
-        onClick={()=>{toggleTodo(todo.id)}}
-        src={checkOffIcon} alt="" />
-      )}
-      <input
-        className="detail-name-input"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="할 일 이름"
-        aria-label="할 일 이름"
-      />
-    </div>    
+    <TodoDetailItem
+      isCompleted={todo.isCompleted}
+      name={name}
+      onNameChange={setName}
+      onToggle={() => toggleTodo(todo.id)}
+    /> 
     <div className="detail-content">
       <div className="detail-img">
         {imageUrl ? (
