@@ -5,14 +5,8 @@
   gap: 16px
 }
 
-.todo-form input {
+.todo-form .search-input {
   flex:1;
-  padding: 0 16px;
-  background-color: var(--slate-100);
-  border: 2px solid var(--slate-900);
-  border-radius: 24px;
-  outline: none;
-  box-shadow: 4px 4px 0 var(--slate-900);
 }
 
 .todo-form button {
