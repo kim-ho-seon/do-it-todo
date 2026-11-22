@@ -1,5 +1,6 @@
 import './Header.css';
 
+// 공통 헤더 - 로고 클릭 시 새로고침 (Link 대신 a 태그 사용)
 function Header() {
 
   return (
