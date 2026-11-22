@@ -6,22 +6,36 @@ import type { Dispatch, SetStateAction } from 'react';
 import TodoListItem from './TodoListItem';
 import todoTitleImg from '../../assets/images/todo.png';
 import doneTitleImg from '../../assets/images/done.png';
+import { updateTodo } from '../../api/todos';
 
+// todo 목록
 function TodoList({todos,setTodos}:{
   todos:Todo[],
   setTodos: Dispatch<SetStateAction<Todo[]>>
-}){ 
+}){
 
   const navigate = useNavigate()
 
   const todoItems = todos.filter((todo) => !todo.isCompleted);
   const doneItems = todos.filter((todo) => todo.isCompleted);
-  const toggleTodo = (id: number) => {
-    setTodos((prev)=>
-      prev.map((todo)=> 
-        todo.id === id? {...todo, isCompleted: !todo.isCompleted} : todo))} 
   
-  return(
+  // 완료 토글 - 서버 저장 후 화면 반영
+  const toggleTodo = async (id: number) => {
+    const target = todos.find((todo)=> todo.id === id) // 누른 항목 찾기
+    if(!target) return;
+
+    const isCompleted = !target.isCompleted; // 값 반전
+
+    try {
+      await updateTodo(id, { isCompleted }); // 서버 저장
+      setTodos((prev) => // 값 반영
+        prev.map((todo) => (todo.id === id ? { ...todo, isCompleted } : todo))
+      );
+    }catch{
+      alert('상태를 바꾸지 못했어요.')
+    }
+  }
+    return(
     <div className="todo-list">
       <div className="todo-section">
         <h2>
