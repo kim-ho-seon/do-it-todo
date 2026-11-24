@@ -7,6 +7,7 @@ import checkIcon from "../assets/icon/check.png"
 import xIcon from "../assets/icon/X.png"
 import { deleteTodo, getTodo, updateTodo, uploadImage } from "../api/todos"
 import type { Todo } from "../types/TodoType"
+import { validateImage } from "../utils/validateImage"
 
 // 상세 페이지 - 조회, 수정, 삭제
 function TodoDetailPage() {
@@ -47,29 +48,19 @@ function TodoDetailPage() {
 
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-
-
-  // 이미지 선택 및 업로드 - 조건: 이미지 파일, 영어 파일명, 5MB 이하
-  // 수정완료 버튼 클릭 시 저장
+  // 이미지 선택 및 업로드 - 검사 후 업로드, 저장은 수정완료 버튼에서
   const handleImageChange = async (e: ChangeEvent<HTMLInputElement>)=>{
     const file = e.target.files?.[0]
     // 같은 파일 재선택 가능. 초기화
     e.target.value = ''
     if(!file) return
-    if(!file.type.startsWith('image/')){
-      alert('이미지 파일만 첨부할 수 있어요.');
+
+    const error = validateImage(file)
+    if (error) {
+      alert(error)
       return
     }
-    const baseName = file.name.replace(/\.[^.]+$/, '')
-    if (!/^[a-zA-Z]+$/.test(baseName)) {
-      alert('파일 이름은 영어로만 되어 있어야 해요.')
-      return
-    }
-    
-    if(file.size > 5*1024*1024){
-      alert('5MB 이하 이미지만 첨부할 수 있어요.')
-      return
-    }
+
     setIsUploading(true)
     try {
       const url = await uploadImage(file)
