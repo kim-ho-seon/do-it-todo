@@ -5,16 +5,6 @@ import TodoListPage from './pages/TodoListPage'
 import TodoDetailPage from './pages/TodoDetailPage';
 import Header from './components/common/Header';
 
-// todo data type
-export type Todo = {
-  id: number;
-  tenantId?: string;
-  name: string;
-  memo?: string;
-  imageUrl?: string;
-  isCompleted: boolean;
-}
-
 function App() {
 
   return (

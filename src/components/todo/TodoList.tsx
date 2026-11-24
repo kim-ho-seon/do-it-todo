@@ -1,12 +1,12 @@
 
 import { useNavigate, } from 'react-router-dom';
 import './TodoList.css'
-import type { Todo } from '../../App';
 import type { Dispatch, SetStateAction } from 'react';
 import TodoListItem from './TodoListItem';
 import todoTitleImg from '../../assets/images/todo.png';
 import doneTitleImg from '../../assets/images/done.png';
 import { updateTodo } from '../../api/todos';
+import type { Todo } from '../../types/TodoType';
 
 // todo 목록
 function TodoList({todos,setTodos}:{

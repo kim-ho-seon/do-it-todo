@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom"
 import './TodoDetailPage.css'
-import type { Todo } from "../App"
 import { useRef, useState, type ChangeEvent,  useEffect} from "react"
 import TodoDetailItem from "../components/todo/TodoDetailItem"
 import defaultImg from "../assets/images/img.png"
 import checkIcon from "../assets/icon/check.png"
 import xIcon from "../assets/icon/X.png"
 import { deleteTodo, getTodo, updateTodo, uploadImage } from "../api/todos"
+import type { Todo } from "../types/TodoType"
 
 // 상세 페이지 - 조회, 수정, 삭제
 function TodoDetailPage() {

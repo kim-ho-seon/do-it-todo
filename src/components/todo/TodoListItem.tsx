@@ -1,7 +1,7 @@
 import './TodoListItem.css'
-import type { Todo } from "../../App"
 import checkOffIcon from '../../assets/icon/checkEmpty.png'
 import checkOnIcon from '../../assets/icon/checkCircle.png'
+import type { Todo } from '../../types/TodoType'
 
 type TodoListItemProps = {
   todo: Todo
