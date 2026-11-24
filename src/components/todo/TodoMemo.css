@@ -1,0 +1,28 @@
+/* 메모 영역 */
+.memo-box {
+  display: flex;
+  flex-direction: column;
+  height: 310px;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background: url('../../assets/images/memo.png') center / cover no-repeat;
+}
+
+.memo-title {
+  margin: 0 0 16px;
+  text-align: center;
+  color: var(--amber-800);
+  font: var(--font-extrabold-16);
+}
+
+.memo-textarea {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  resize: none;
+  outline: none;
+  font: inherit;
+  text-align: left;
+}
