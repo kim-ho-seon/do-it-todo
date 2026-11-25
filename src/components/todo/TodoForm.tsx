@@ -1,8 +1,8 @@
 import { useState, type Dispatch, type SetStateAction } from 'react';
 import './TodoForm.css';
-import type { Todo } from '../../App';
 import SearchInput from '../common/SearchInput';
 import { createTodo } from '../../api/todos';
+import type { Todo } from '../../types/TodoType';
 
 // 할일 추가 form
 function TodoForm({setTodos}:{setTodos:Dispatch<SetStateAction<Todo[]>>}) {

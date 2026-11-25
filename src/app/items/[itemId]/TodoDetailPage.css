@@ -1,0 +1,87 @@
+.detail-container{
+  padding: 16px 100px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detail-content{
+  display: flex;
+  gap: 24px;
+}
+
+.detail-memo{
+  flex:3;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.memo-btns{
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.memo-btns img{
+  width: 16px;
+  height: 16px;
+}
+
+.edit-btn,
+.delete-btn {
+  font: var(--font-bold-16);
+}
+
+.edit-btn{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 24px;
+  background-color: var(--slate-200);
+  padding: 16px 42px;  
+  border: 2px solid var(--slate-900);
+  box-shadow: 4px 4px 0 var(--slate-900);
+}
+
+.is-done.edit-btn{
+  background-color: var(--lime-300);
+}
+
+.delete-btn{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 24px;
+  background-color: var(--rose-500);
+  padding: 16px 42px;
+  border: 2px solid var(--slate-900);
+  box-shadow: 4px 4px 0 var(--slate-900);
+  color: var(--white);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .detail-container{
+    padding: 16px 0;
+  }
+  .detail-content{
+    flex-direction: column;
+  }
+
+  .memo-btns{
+    justify-content: center;
+  }
+
+  .edit-btn, .delete-btn{
+    padding: 10px 42px;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .edit-btn, .delete-btn{
+    padding: 10px 30px;
+  }
+}

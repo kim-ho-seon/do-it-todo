@@ -1,0 +1,62 @@
+/* 섹션 - 제목, 목록, 빈 상태 */
+.todo-section,
+.done-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-section h2,
+.done-section h2 {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 16px;
+}
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 빈 상태 */
+.empty-state {
+  width: 240px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--slate-400);
+}
+
+.empty-img {
+  margin: 0 auto 16px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.empty-img-todo {
+  width: 240px;
+  height: 240px;
+  background-image: url('../../assets/images/todoLarge.png');
+}
+
+.empty-img-done {
+  width: 240px;
+  height: 240px;
+  background-image: url('../../assets/images/doneLarge.png');
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .empty-img-todo {
+    width: 120px;
+    height: 120px;
+    background-image: url('../../assets/images/todoSmall.png');
+  }
+
+  .empty-img-done {
+    width: 120px;
+    height: 120px;
+    background-image: url('../../assets/images/doneSmall.png');
+  }
+}
