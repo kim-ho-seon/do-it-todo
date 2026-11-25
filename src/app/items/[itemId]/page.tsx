@@ -1,20 +1,21 @@
-import { useNavigate, useParams } from "react-router-dom"
+"use client"
+
+import { useParams, useRouter } from "next/navigation"
 import './TodoDetailPage.css'
 import { useState, useEffect} from "react"
-import TodoDetailItem from "../components/todo/TodoDetailItem"
-import checkIcon from "../assets/icon/check.png"
-import xIcon from "../assets/icon/X.png"
-import { deleteTodo, getTodo, updateTodo } from "../api/todos"
-import type { Todo } from "../types/TodoType"
-import TodoImageUploader from "../components/todo/TodoImageUploader"
-import TodoMemo from "../components/todo/TodoMemo"
+import TodoDetailItem from "@/components/todo/TodoDetailItem"
+import checkIcon from "@/assets/icon/check.png"
+import xIcon from "@/assets/icon/X.png"
+import { deleteTodo, getTodo, updateTodo } from "@/api/todos"
+import type { Todo } from "@/types/TodoType"
+import TodoImageUploader from "@/components/todo/TodoImageUploader"
+import TodoMemo from "@/components/todo/TodoMemo"
 
 // 상세 페이지 - 조회, 수정, 삭제
 function TodoDetailPage() {
   
-  const { itemId } = useParams()
-  const navigate = useNavigate()
-
+  const { itemId } = useParams<{ itemId: string }>()
+  const router = useRouter()
   const id = Number(itemId)  // 주소의 id는 문자열이라 숫자로 변환
   const [todo, setTodo] = useState<Todo | null>(null)  // 도착 전에는 null
   const [loadError, setLoadError] = useState(false)
@@ -57,7 +58,7 @@ function TodoDetailPage() {
 
     try {
       await updateTodo(id, { name: trimmedName, memo, ...imageUrl && { imageUrl } }) // img 주소가 있을 때만 포함
-      navigate('/')
+      router.push('/')
     } catch {
       alert('저장하지 못했어요.')
     }
@@ -69,7 +70,7 @@ function TodoDetailPage() {
     if (!window.confirm('정말 삭제할까요?')) return;
     try {
       await deleteTodo(id)
-      navigate('/')
+      router.push('/')
     }catch{
       alert('삭제하지 못했어요.')
     }
@@ -95,11 +96,11 @@ function TodoDetailPage() {
             className={todo.isCompleted ?"is-done edit-btn":"edit-btn"}
             onClick={handleSave}
             disabled={isUploading}
-          ><img src={checkIcon} alt="" />수정완료</button>
+          ><img src={checkIcon.src} alt="" />수정완료</button>
           <button 
             className="delete-btn"
             onClick={handleDelete}
-          ><img src={xIcon} alt="" />삭제하기</button>
+          ><img src={xIcon.src} alt="" />삭제하기</button>
         </div>
       </div>
     </div>     
