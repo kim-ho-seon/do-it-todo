@@ -21,7 +21,7 @@ function TodoDetailItem({isCompleted, name, onNameChange, onToggle}:TodoDetailIt
         onClick={onToggle}
         aria-label={isCompleted ? '진행 중으로 변경' : '완료로 변경'}
       >
-        <img src={isCompleted ? checkOnIcon : checkOffIcon} alt=""/>
+        <img src={(isCompleted ? checkOnIcon : checkOffIcon).src} alt=""/>
       </button> 
       <input
         className="detail-name-input"

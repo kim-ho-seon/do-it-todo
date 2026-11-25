@@ -48,7 +48,7 @@ function TodoImageUploader({ imageUrl, setImageUrl, isUploading, setIsUploading 
         {imageUrl ? (
           <img className="attached-img" src={imageUrl} alt="첨부 이미지" />
         ):(
-          <img className="default-img" src={defaultImg} alt="기본 이미지" />)}
+          <img className="default-img" src={defaultImg.src} alt="기본 이미지" />)}
         <button className={imageUrl? "img-add-btn is-edit":"img-add-btn" }
           onClick={()=>fileInputRef.current?.click()}
           disabled={isUploading}

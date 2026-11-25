@@ -27,7 +27,7 @@ function TodoListItem({todo, onToggle, onClick}:TodoListItemProps){
         }}
         aria-label={todo.isCompleted ? '진행 중으로 변경' : '완료로 변경'}
       >
-        <img src={todo.isCompleted ? checkOnIcon : checkOffIcon} alt="" />
+        <img src={(todo.isCompleted ? checkOnIcon : checkOffIcon).src} alt="" />
       </button>
       {todo.name}
     </li>

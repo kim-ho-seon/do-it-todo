@@ -31,7 +31,7 @@ function TodoSection({ variant, todos, onToggle, onItemClick }: TodoSectionProps
   return (
     <div className={`${variant}-section`}>
       <h2>
-        <img src={titleImg} alt={titleAlt} />
+        <img src={titleImg.src} alt={titleAlt} />
       </h2>
 
       {todos.length > 0 ? (
