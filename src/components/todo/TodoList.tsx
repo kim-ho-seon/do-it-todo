@@ -1,10 +1,9 @@
-
-import { useNavigate, } from 'react-router-dom';
 import './TodoList.css'
 import type { Dispatch, SetStateAction } from 'react';
 import { updateTodo } from '../../api/todos';
 import type { Todo } from '../../types/TodoType';
 import TodoSection from './TodoSection';
+import { useRouter } from 'next/navigation';
 
 // todo 목록
 function TodoList({todos,setTodos}:{
@@ -12,12 +11,12 @@ function TodoList({todos,setTodos}:{
   setTodos: Dispatch<SetStateAction<Todo[]>>
 }){
 
-  const navigate = useNavigate()
+  const router = useRouter()
 
   const todoItems = todos.filter((todo) => !todo.isCompleted);
   const doneItems = todos.filter((todo) => todo.isCompleted);
   
-  const goToDetail = (id: number) => navigate(`/items/${id}`)
+  const goToDetail = (id: number) => router.push(`/items/${id}`)
 
   // 완료 토글 - 서버 저장 후 화면 반영
   const toggleTodo = async (id: number) => {
