@@ -3,7 +3,7 @@
 할 일을 추가하고, 진행 중 / 완료로 나누어 관리하며, 상세 페이지에서 이름·상태·메모·이미지를 수정하거나 삭제할 수 있는 Todo 서비스입니다.
 Vite + React로 처음 만든 뒤, 컴포넌트를 정리하고 Next.js App Router로 전환했습니다.
 
-- 배포 링크: hodonee-do-it-todo-nextjs.vercel.app
+- 배포 링크: https://hodonee-do-it-todo-nextjs.vercel.app
 - API 문서: https://assignment-todolist-api.vercel.app/docs/
 
 ## 화면
